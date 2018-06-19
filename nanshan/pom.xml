@@ -79,7 +79,14 @@
 
 
 
+
+    <!--默认情况是把application-***.yml放到src/main/resources里面，然后在application.yml里面设置
+    spring:
+        profiles:
+            active: dev/test/pro   但是这样每次都要手动，很不灵活,所以通过Maven控制Spring Profile-->
+
     <!-- Maven控制Spring Profile -->
+    <!--参考网址;https://segmentfault.com/a/1190000011770028-->
     <profiles>
         <profile>
             <id>dev</id>
@@ -89,16 +96,16 @@
             <properties>
                 <profileActive>dev</profileActive>
             </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.tomcat</groupId>
-                    <artifactId>tomcat-jdbc</artifactId>
-                </dependency>
-            </dependencies>
+            <!--<dependencies>-->
+                <!--<dependency>-->
+                    <!--<groupId>org.springframework.boot</groupId>-->
+                    <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+                <!--</dependency>-->
+                <!--<dependency>-->
+                    <!--<groupId>org.apache.tomcat</groupId>-->
+                    <!--<artifactId>tomcat-jdbc</artifactId>-->
+                <!--</dependency>-->
+            <!--</dependencies>-->
         </profile>
 
         <profile>
