@@ -17,16 +17,21 @@
       <version>1.5.9.RELEASE</version>
   </parent>
 
+    <!--定义jar包版本-->
     <properties>
         <mysql.version>5.1.43</mysql.version>
     </properties>
 
 
   <dependencies>
+
+      <!--spirng boot web项目所依赖的jar包-->
       <dependency>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-web</artifactId>
       </dependency>
+
+      <!--引进mysql驱动jar包-->
       <dependency>
           <groupId>mysql</groupId>
           <artifactId>mysql-connector-java</artifactId>
@@ -36,7 +41,8 @@
 
   </dependencies>
 
-
+    <!--spring boot maven 插件-->
+    <!--有时间看看maven插件是个什么原理情况-->
     <build>
         <plugins>
             <plugin>
