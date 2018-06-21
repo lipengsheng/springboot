@@ -34,12 +34,12 @@
           classpath当中有log4j之类的jar包，配置好log4j.properties文件放到classpath当中就可以了。
           而如果要使用logback，有两种:1.在application.yml里配置日志变量。2.配置好logback,放到classpath当中就可以了
           -->
-          <exclusions>
-              <exclusion>
-                  <groupId>org.springframework.boot</groupId>
-                  <artifactId>spring-boot-starter-logging</artifactId>
-              </exclusion>
-          </exclusions>
+          <!--<exclusions>-->
+              <!--<exclusion>-->
+                  <!--<groupId>org.springframework.boot</groupId>-->
+                  <!--<artifactId>spring-boot-starter-logging</artifactId>-->
+              <!--</exclusion>-->
+          <!--</exclusions>-->
 
       </dependency>
 
@@ -88,24 +88,36 @@
                 </executions>
             </plugin>
         </plugins>
-            <!-- profile对资源的操作 -->
+
+        <!--如果没有加<resources>,那么就默认包含项目中resource目录所有的资源文件，如果加了<resource>,
+        那么就要指明具体要包含哪些资源文件-->
             <resources>
                 <resource>
                     <directory>src/main/resources</directory>
-                    <excludes>
-                        <exclude>application*.yml</exclude>
-                    </excludes>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
                 </resource>
                 <resource>
                     <directory>src/main/resources</directory>
-                    <!-- 是否替换@xx@表示的maven properties属性值 -->
-                    <filtering>true</filtering>
                     <includes>
                         <include>application.yml</include>
-                        <include>application-${profileActive}.yml</include>
                     </includes>
+                    <filtering>true</filtering>
+                </resource>
+
+                <!-- profile对资源的操作 -->
+                <resource>
+                    <directory>src/main/environment/${profileActive}</directory>
+                    <includes>
+                        <include>**/*.*</include>
+                    </includes>
+                    <!-- 是否替换@xx@表示的maven properties属性值 -->
+                    <filtering>true</filtering>
                 </resource>
             </resources>
+
+
     </build>
 
 
@@ -118,6 +130,9 @@
 
     <!-- Maven控制Spring Profile -->
     <!--参考网址;https://segmentfault.com/a/1190000011770028-->
+
+    <!-- maven 中的profile可以看作是一种开关，<resource>中的<filtering>表示将maven中的变量${xxx}传到<resource>中对应的文件中去-->
+
     <profiles>
         <profile>
             <id>dev</id>
