@@ -125,6 +125,12 @@
                     <includes>
                         <include>**/*.*</include>
                     </includes>
+
+                    <!--通过这里设置是否排除banner.txt文件，以达到是否修改了banner-->
+                    <excludes>
+                        <exclude>banner.txt</exclude>
+                    </excludes>
+
                     <!-- 是否替换@xx@表示的maven properties属性值 -->
                     <filtering>true</filtering>
                 </resource>
