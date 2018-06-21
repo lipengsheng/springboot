@@ -49,23 +49,12 @@
 
       </dependency>
 
-
+      <!-- 引进测试所需要依赖的jar包-->
       <dependency>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-test</artifactId>
           <scope>test</scope>
       </dependency>
-
-      <!--<dependency>-->
-          <!--<groupId>org.springframework</groupId>-->
-          <!--<artifactId>spring-test</artifactId>-->
-      <!--</dependency>-->
-      <!--<dependency>-->
-          <!--<groupId>junit</groupId>-->
-          <!--<artifactId>junit</artifactId>-->
-      <!--</dependency>-->
-
-
 
       <!--引进mysql驱动jar包-->
       <dependency>
@@ -81,7 +70,7 @@
           <version>${mybaits.version}</version>
       </dependency>
 
-      <!--引进lombok jar包-->
+      <!--引进lombok jar包 @Data代替setter，getter方法-->
        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
