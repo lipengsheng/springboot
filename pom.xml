@@ -26,6 +26,12 @@
 
   <dependencies>
 
+      <!--spirng boot 核心starter-->
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter</artifactId>
+      </dependency>
+
       <!--spirng boot web项目所依赖的jar包-->
       <dependency>
           <groupId>org.springframework.boot</groupId>
@@ -42,6 +48,24 @@
           <!--</exclusions>-->
 
       </dependency>
+
+
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-test</artifactId>
+          <scope>test</scope>
+      </dependency>
+
+      <!--<dependency>-->
+          <!--<groupId>org.springframework</groupId>-->
+          <!--<artifactId>spring-test</artifactId>-->
+      <!--</dependency>-->
+      <!--<dependency>-->
+          <!--<groupId>junit</groupId>-->
+          <!--<artifactId>junit</artifactId>-->
+      <!--</dependency>-->
+
+
 
       <!--引进mysql驱动jar包-->
       <dependency>
