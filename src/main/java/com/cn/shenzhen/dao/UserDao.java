@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @version 1.0.0
  * @since 2017/5/4下午2:03
  */
+
 public interface UserDao {
 
     User getById(String id);

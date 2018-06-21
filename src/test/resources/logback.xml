@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <!-- 彩色日志 -->
+  <!-- 彩色日志依赖的渲染类 -->
+  <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+  <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+  <conversionRule conversionWord="wEx"
+                  converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+  <!-- 彩色日志格式 -->
+  <property name="CONSOLE_LOG_PATTERN"
+            value="${CONSOLE_LOG_PATTERN:-%clr(%d{YYYY-MM-DD HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(%caller{1}) %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
+  <!-- Console 输出设置 -->
+  <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+      <charset>utf8</charset>
+    </encoder>
+  </appender>
+
+  <logger name="com.cn.shenzhen" level="DEBUG"/>
+  <root level="INFO">
+    <appender-ref ref="Console"/>`
+  </root>
+</configuration>
+
+
+<!--日志输出的配置思路:
+通过设置<logger name="具体包名" level="日志级别"/>或者<root level="日志级别">***</root>来设置
+代码中某一块的日志级别，只有到达这个级别才能正常输出日志，这叫控制日志输入。
+通过设置多个appender来接收什么样的日志输出。通过设置<filter>中的<level>来接收具体某一类型的日志，或者某一级别以上的日志，
+如果没有设置filter，则表示接收所有的日志。参考网址:https://www.cnblogs.com/drizzlewithwind/p/6045435.html.
+这叫控制日志接收。-->
