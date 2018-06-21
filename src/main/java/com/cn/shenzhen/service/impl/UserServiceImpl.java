@@ -1,8 +1,8 @@
-package com.cn.shenzhen.serviece.impl;
+package com.cn.shenzhen.service.impl;
 
 import com.cn.shenzhen.common.pojo.User;
 import com.cn.shenzhen.dao.UserDao;
-import com.cn.shenzhen.serviece.UserService;
+import com.cn.shenzhen.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

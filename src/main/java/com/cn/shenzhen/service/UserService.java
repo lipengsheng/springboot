@@ -1,4 +1,4 @@
-package com.cn.shenzhen.serviece;
+package com.cn.shenzhen.service;
 
 import com.cn.shenzhen.common.pojo.User;
 
