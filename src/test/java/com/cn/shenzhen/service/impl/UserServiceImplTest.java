@@ -27,7 +27,7 @@ public class UserServiceImplTest {
     private Environment environment;
 
     @Test
-    public void  queryUserTest(){
+    public void  testQueryUser(){
         User user=userService.queryUser("1");
 //        log.info(user.getId());
 //        Assert.assertNotNull(user.getId());
