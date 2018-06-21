@@ -30,6 +30,17 @@
       <dependency>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-web</artifactId>
+          <!--spring boot  默认日志框架是logback,如果想用log4j作为日志框架的话，就应该排除掉logback之类的jar包，保证
+          classpath当中有log4j之类的jar包，配置好log4j.properties文件放到classpath当中就可以了。
+          而如果要使用logback，有两种:1.在application.yml里配置日志变量。2.配置好logback,放到classpath当中就可以了
+          -->
+          <exclusions>
+              <exclusion>
+                  <groupId>org.springframework.boot</groupId>
+                  <artifactId>spring-boot-starter-logging</artifactId>
+              </exclusion>
+          </exclusions>
+
       </dependency>
 
       <!--引进mysql驱动jar包-->
