@@ -23,4 +23,14 @@ public class UserJdbcServiceImplTest {
     public void  testAddUser(){
         userJdbcService.addUser();
     }
+
+    @Test
+    public void  testAddUser2() throws Exception {
+        userJdbcService.addUser2();
+    }
+
+    @Test
+    public void  testAddUser3() throws Exception {
+        userJdbcService.addUser3();
+    }
 }
