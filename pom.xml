@@ -70,6 +70,31 @@
           <version>${mybaits.version}</version>
       </dependency>
 
+      <!--引入jdbc 所需要的jar包-->
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-jdbc</artifactId>
+          <!--spring boot 默认的数据源是org.apache.tomcat.jdbc.pool.DataSource
+            如果想要引用自己的数据源，那么就要排除它已有的数据源,引进自己的数据源。
+            我这里引进阿里巴巴的数据源-->
+          <exclusions>
+              <exclusion>
+                  <groupId>org.apache.tomcat</groupId>
+                  <artifactId>tomcat-jdbc</artifactId>
+              </exclusion>
+          </exclusions>
+      </dependency>
+
+      <!--引入Druid依赖-->
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>druid</artifactId>
+          <version>1.0.29</version>
+      </dependency>
+
+
+
+
       <!--引进lombok jar包 @Data代替setter，getter方法-->
        <dependency>
             <groupId>org.projectlombok</groupId>
