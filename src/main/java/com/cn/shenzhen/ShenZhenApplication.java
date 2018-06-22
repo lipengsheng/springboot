@@ -5,6 +5,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
@@ -16,6 +17,8 @@ import javax.sql.DataSource;
 @SpringBootApplication
 //这个集成mybaits要配置的注解，很关键，要注意
 @MapperScan("com.cn.shenzhen.dao")
+
+@EnableTransactionManagement  //这里表示要开启事务
 public class ShenZhenApplication {
     public static void main( String[] args ) {
         ApplicationContext  applicationContext=SpringApplication.run(ShenZhenApplication.class,args);
