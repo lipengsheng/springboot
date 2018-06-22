@@ -7,7 +7,7 @@
   <groupId>com.cn.shenzhen</groupId>
   <artifactId>nanshan</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>${jarType}</packaging>
 
   <name>spirngboot</name>
 
@@ -172,6 +172,7 @@
             </activation>
             <properties>
                 <profileActive>dev</profileActive>
+                <jarType>jar</jarType>
             </properties>
             <!--<dependencies>-->
                 <!--<dependency>-->
@@ -189,6 +190,7 @@
             <id>test</id>
             <properties>
                 <profileActive>test</profileActive>
+                <jarType>jar</jarType>
             </properties>
         </profile>
 
@@ -196,7 +198,17 @@
             <id>pro</id>
             <properties>
                 <profileActive>pro</profileActive>
+                <!--生长环境，如果需要打war包-->
+                <jarType>war</jarType>
             </properties>
+            <dependencies>
+                <!--部署到生产环境，打war包，增加下面依赖覆盖默认内嵌的tomcat依赖-->
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                    <scope>provided</scope>
+                </dependency>
+            </dependencies>
         </profile>
     </profiles>
 
