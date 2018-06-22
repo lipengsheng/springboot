@@ -111,19 +111,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <mainClass>com.edan.EdanWebApplication</mainClass>
-                    <includeSystemScope>true</includeSystemScope>
-                    <layout>ZIP</layout>
-                    <fork>true</fork>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
 
@@ -206,9 +193,9 @@
         </profile>
 
         <profile>
-            <id>prod</id>
+            <id>pro</id>
             <properties>
-                <profileActive>prod</profileActive>
+                <profileActive>pro</profileActive>
             </properties>
         </profile>
     </profiles>
