@@ -202,12 +202,19 @@
                 <jarType>war</jarType>
             </properties>
             <dependencies>
-                <!--部署到生产环境，打war包，增加下面依赖覆盖默认内嵌的tomcat依赖-->
+                <!--部署到生产环境，打war包，增加下面依赖覆盖默认内嵌的tomcat依赖,增加servlet jar 包-->
                 <dependency>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-tomcat</artifactId>
                     <scope>provided</scope>
                 </dependency>
+                <dependency>
+                    <groupId>javax.servlet</groupId>
+                    <artifactId>javax.servlet-api</artifactId>
+                    <version>3.1.0</version>
+                    <scope>provided</scope>
+                </dependency>
+
             </dependencies>
         </profile>
     </profiles>
