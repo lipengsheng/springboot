@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.sql.DataSource;
 
@@ -15,10 +16,13 @@ import javax.sql.DataSource;
  */
 @Slf4j
 @SpringBootApplication
+
 //这个集成mybaits要配置的注解，很关键，要注意
 @MapperScan("com.cn.shenzhen.dao")
-
-@EnableTransactionManagement  //这里表示要开启事务
+//这里表示要开启事务
+@EnableTransactionManagement
+//表示开启Swagger
+@EnableSwagger2
 public class ShenZhenApplication {
     public static void main( String[] args ) {
         ApplicationContext  applicationContext=SpringApplication.run(ShenZhenApplication.class,args);
