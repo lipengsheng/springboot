@@ -1,6 +1,15 @@
 spring:
   profiles:
     active: @profileActive@
+  redis:          #配置redis变量
+     database: 0   #数据库名称，默认为db0
+     host: 192.168.60.128 #服务器地址
+     port: 6379  #端口号
+     password: 123456 #密码
+     pool.max-active: 8 #连接池设置
+     pool.max-wait: -1
+     pool.max-idle: 8
+     pool.min-idle: 0
 
 #集成mybaits配置的默认变量，很关键，要注意
 mybatis:
